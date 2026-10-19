@@ -1,0 +1,85 @@
+/* "Where I'm useful" — about text and principle cards. */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2rem,6vw,5rem);
+  align-items: center;
+}
+
+.about__prose p {
+  font-size: var(--fs-lead);
+  color: var(--text-2);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.about__prose p+p {
+  margin-top: var(--sp-5);
+}
+
+.about__prose p:first-child {
+  color: var(--text);
+  font-size: clamp(1.25rem,1.9vw,1.5rem);
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.about__principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.about__principle {
+  position: relative;
+  padding: var(--sp-5) calc(var(--sp-5) + 2.4rem) var(--sp-5) var(--sp-5);
+  background: var(--surface);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+
+.about__principle:hover {
+  border-color: var(--accent);
+  transform: translate(4px);
+}
+
+.about__principle-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+}
+
+.about__principle-text {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.about__prose {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.1rem !important;
+}
+
+.about__prose p:not(:first-child) {
+  font-size: 1.02rem;
+  color: var(--text-2);
+}
+
+.about__prose>p {
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}

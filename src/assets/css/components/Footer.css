@@ -1,0 +1,129 @@
+/* Site footer — brand, section links, social icons. */
+
+.ft {
+  padding-block: 2.2rem;
+  background: #151112;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.ft__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ft .logo {
+  flex: none;
+}
+
+.ft__sep {
+  flex: none;
+  width: 1px;
+  height: 52px;
+  background: rgba(255,255,255,.12);
+}
+
+.ft__mid {
+  display: grid;
+  gap: .55rem;
+  min-width: 0;
+}
+
+.ft__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+}
+
+.ft__nav a {
+  font-size: .92rem;
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.4;
+  transition: color var(--dur) var(--ease);
+}
+
+.ft__nav a:hover {
+  color: var(--accent-strong);
+}
+
+.ft__copy,
+.ft__mail {
+  margin: 0;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: var(--text-3);
+}
+
+.ft__right {
+  margin-left: auto;
+  display: grid;
+  justify-items: end;
+  gap: .6rem;
+}
+
+.ft__social {
+  display: flex;
+  gap: .55rem;
+}
+
+.ft__social a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--text-2);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: color var(--dur) var(--ease),background var(--dur) var(--ease),border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+
+.ft__social a:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.ft__social svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ft__mail a {
+  color: var(--text-2);
+}
+
+.ft__mail a:hover {
+  color: var(--accent-strong);
+}
+
+@media (max-width: 860px) {
+  .ft__inner {
+    flex-wrap: wrap;
+    gap: 1.4rem;
+  }
+
+  .ft__sep {
+    display: none;
+  }
+
+  .ft__mid {
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .ft__right {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .ft__right {
+    flex-basis: 100%;
+    justify-items: start;
+    margin-left: 0;
+    order: 4;
+  }
+}

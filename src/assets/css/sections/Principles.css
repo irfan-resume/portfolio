@@ -1,0 +1,100 @@
+/* "What I care about" — principle cards with tinted icons. */
+
+.principles__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 1.1rem;
+}
+
+.principle {
+  position: relative;
+  padding: 1.6rem 1.6rem 1.75rem;
+  background: linear-gradient(180deg,rgba(255,255,255,.035) 0%,rgba(255,255,255,.01) 100%),var(--surface);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 18px;
+  transition: border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+
+.principle:hover {
+  border-color: rgba(255,255,255,.14);
+  transform: translateY(-4px);
+}
+
+.principle__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 .7rem;
+  padding-right: 0;
+  line-height: 1.3;
+}
+
+.principle__text {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+.principle .ghost-num {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem,3.2vw,2.6rem);
+  letter-spacing: 0;
+  opacity: .13;
+  top: 1.3rem;
+  right: 1.4rem;
+}
+
+.principle__icon {
+  --tone: 96,140,255;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  margin-bottom: 1.9rem;
+  color: rgb(var(--tone));
+  background: rgba(var(--tone),.12);
+  border: 1px solid rgba(var(--tone),.32);
+}
+
+.principle__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.principle__icon[data-tone="1"] {
+  --tone: 236,72,62;
+}
+
+.principle__icon[data-tone="2"] {
+  --tone: 170,130,230;
+}
+
+.principle__icon[data-tone="3"] {
+  --tone: 74,196,120;
+}
+
+.principle__icon[data-tone="4"] {
+  --tone: 230,160,60;
+}
+
+.principle__icon[data-tone="5"] {
+  --tone: 70,190,190;
+}
+
+@media (max-width: 980px) {
+  .principles__grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .principles__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,64 @@
+/* "How I work with AI" — four-step workflow. */
+
+.aiwork__steps {
+  list-style: none;
+  margin: 0 0 var(--sp-7);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: var(--sp-5);
+  counter-reset: step;
+}
+
+.aiwork__step {
+  position: relative;
+  padding: var(--sp-5);
+  background: var(--surface);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius);
+}
+
+.aiwork__step:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(var(--sp-5) * -1 - 1px);
+  width: var(--sp-5);
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.aiwork__step:last-child:after {
+  display: none;
+}
+
+.aiwork__step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 var(--sp-2);
+  padding-right: 2.4rem;
+}
+
+.aiwork__step-text {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+@media (max-width: 980px) {
+  .aiwork__steps {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .aiwork__step:after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .aiwork__steps {
+    grid-template-columns: 1fr;
+  }
+}

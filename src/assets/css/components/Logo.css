@@ -1,0 +1,45 @@
+/* "irfan Khan." wordmark used in the navbar and footer. */
+
+.logo {
+  display: inline-flex;
+  align-items: stretch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.05rem,1.6vw,1.3rem);
+  letter-spacing: -.045em;
+  line-height: 1;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease);
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo__block {
+  display: flex;
+  align-items: center;
+  padding: .5em;
+  color: #fff;
+}
+
+.logo__block--dark {
+  position: relative;
+  background: #0b0b0c;
+  padding-left: .6em;
+  border: 1px solid var(--line);
+  border-right: 0;
+}
+
+.logo__block--accent {
+  background: var(--accent);
+  padding-right: .55em;
+}
+
+.logo__i {
+  width: .26em;
+  height: .88em;
+  margin-right: .07em;
+  display: block;
+}

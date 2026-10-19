@@ -1,0 +1,150 @@
+/* "Where it started" — vertical education timeline. */
+
+.tl {
+  --line: rgba(232,52,42,.55);
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 3.2rem;
+  display: grid;
+  gap: 1.25rem;
+  max-width: 860px;
+}
+
+.tl:before {
+  content: "";
+  position: absolute;
+  left: .95rem;
+  top: 1.6rem;
+  bottom: 1.6rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg,var(--accent) 0%,rgba(232,52,42,.35) 100%);
+}
+
+.tl__item {
+  --tone: 45,126,247;
+  position: relative;
+}
+
+.tl__item[data-tone="red"] {
+  --tone: 232,52,42;
+}
+
+.tl__item[data-tone="amber"] {
+  --tone: 236,170,60;
+}
+
+.tl__item[data-tone="green"] {
+  --tone: 62,196,138;
+}
+
+.tl__item[data-tone="violet"] {
+  --tone: 160,110,240;
+}
+
+.tl__dot {
+  position: absolute;
+  left: -2.75rem;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-sizing: border-box;
+}
+
+.tl__item.is-active .tl__dot {
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
+  left: -3rem;
+  background: var(--accent);
+  border: 5px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent),0 0 18px rgba(232,52,42,.55);
+}
+
+.tl__card {
+  padding: 1.4rem 1.6rem;
+  border-radius: 20px;
+  background: rgba(var(--tone),.09);
+  border: 1px solid rgba(var(--tone),.2);
+  transition: transform var(--dur) var(--ease),border-color var(--dur) var(--ease);
+}
+
+.tl__item:hover .tl__card {
+  transform: translateX(6px);
+  border-color: rgba(var(--tone),.4);
+}
+
+.tl__item.is-active .tl__card {
+  background: linear-gradient(135deg,#E8342A 0%,#F2556B 100%);
+  border-color: transparent;
+  box-shadow: 0 24px 50px -24px rgba(232,52,42,.75);
+}
+
+.tl__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .5rem;
+}
+
+.tl__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.tl__period {
+  flex: none;
+  font-size: .9rem;
+  font-weight: 600;
+  color: rgb(var(--tone));
+  white-space: nowrap;
+}
+
+.tl__org {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.tl__item.is-active .tl__period,
+.tl__item.is-active .tl__org {
+  color: rgba(255,255,255,.9);
+}
+
+@media (max-width: 560px) {
+  .tl {
+    padding-left: 2.6rem;
+  }
+
+  .tl:before {
+    left: .7rem;
+  }
+
+  .tl__dot {
+    left: -2.35rem;
+  }
+
+  .tl__item.is-active .tl__dot {
+    left: -2.6rem;
+  }
+
+  .tl__top {
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  .tl__card {
+    padding: 1.15rem 1.2rem;
+  }
+}
